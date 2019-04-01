@@ -59,6 +59,17 @@ class ViewController: UIViewController {
         }
     }
 
+ 
+    @IBAction func mult() {
+        if canAddOperator {
+            operators.append("x")
+            stringNumbers.append("")
+            updateDisplay()
+        }
+    }
+    
+    
+    
     @IBAction func plus() {
         if canAddOperator {
         	operators.append("+")
@@ -104,6 +115,10 @@ class ViewController: UIViewController {
                 } else if operators[i] == "-" {
                     total -= number
                 }
+                else if operators[i] == "x" {
+                    total = total * number
+                }
+                
             }
         }
 
