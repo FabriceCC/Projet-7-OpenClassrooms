@@ -10,26 +10,37 @@ import Foundation
 
 class Calculate {
     
-    // MARK: - Properties
-//    var stringNumbers: [String] = [String()]
- 
-//var operators: [String] = ["+"]
- //   var index = 0
-  //  var isExpressionCorrect: Bool {
-   //     if let stringNumber = stringNumbers.last {
-     //       if stringNumber.isEmpty {
-       //         if stringNumbers.count == 1 {
-         //           let alertVC = UIAlertController(title: "Zéro!", message: "Démarrez un nouveau calcul !", preferredStyle: .alert)
-           //         alertVC.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-           //         self.present(alertVC, animated: true, completion: nil)
-    //    } else {
-      //              let alertVC = UIAlertController(title: "Zéro!", message: "Entrez une expression correcte !", preferredStyle: .alert)
-       //             alertVC.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-         //           self.present(alertVC, animated: true, completion: nil)
-           //     }
-           //     return false
-         //   }
-      //  }
-     //   return true
-   // }
+    var stringNumbers: [String] = [String()]
+    var operators: [String] = ["+"]
+    var index = 0
+
+    
+    
+    
+    
+    
+
+    func calculateTotal() -> Int {
+        
+        
+        var total = 0
+        for (i, stringNumber) in stringNumbers.enumerated() {
+            if let number = Int(stringNumber) {
+                if operators[i] == "+" {
+                    total += number
+                } else if operators[i] == "-" {
+                    total -= number
+                }
+                else if operators[i] == "x" {
+                    total = total * number
+                }
+                
+            }
+        }
+        
+        return total
+        
+    
+    }
+   
 }
