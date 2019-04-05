@@ -46,6 +46,19 @@ class FabriceCountOnMeTests: XCTestCase {
         XCTAssertNotNil(calcul.calculateTotal())
         
     }
+    
+    func testmum1_WhenUse_ThenNotNil() {
+        
+        calcul.calculateTotal()
+        calcul.operators[1] == "+"
+        calcul.stringNumbers[1] == "2"
+        calcul.stringNumbers[2] == "3"
+        XCTAssert(calcul.calculateTotal() == 5)
+        
+    }
+    
+    
+    
 }
 //GivenPostHasZeroLike_WhenPostIsLiked_ThenPostHasOneLike
 // ETANT DONNÉ QUE le poste n'a pas de like
