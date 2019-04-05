@@ -16,7 +16,8 @@ class FabriceCountOnMeTests: XCTestCase {
     override func setUp() {
         super.setUp()
         calcul = Calculate()
-    }
+        
+        }
     
     
     func testGivenNumbers_WhenUse_ThenNotNil() {
@@ -47,17 +48,32 @@ class FabriceCountOnMeTests: XCTestCase {
         
     }
     
-    func testmum1_WhenUse_ThenNotNil() {
+    func testAdd_WhenUse_ThenOK() {
         
-        calcul.calculateTotal()
-        calcul.operators[1] == "+"
-        calcul.stringNumbers[1] == "2"
-        calcul.stringNumbers[2] == "3"
+        calcul.operators = ["+","+","="]
+        calcul.stringNumbers = ["2","3"]
+        
         XCTAssert(calcul.calculateTotal() == 5)
         
     }
     
+    func testMin_WhenUse_ThenOK() {
+        
+        calcul.operators = ["+","-","="]
+        calcul.stringNumbers = ["6","3"]
+        
+        XCTAssert(calcul.calculateTotal() == 3)
+        
+    }
     
+    func testMul_WhenUse_ThenOK() {
+        
+        calcul.operators = ["+","x","="]
+        calcul.stringNumbers = ["6","3"]
+        
+        XCTAssert(calcul.calculateTotal() == 18)
+        
+    }
     
 }
 //GivenPostHasZeroLike_WhenPostIsLiked_ThenPostHasOneLike
