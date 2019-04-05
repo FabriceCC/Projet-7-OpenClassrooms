@@ -24,20 +24,84 @@ class Calculate {
         
         
         var total = 0
+        var mul1 = 0
+        
+        
         for (i, stringNumber) in stringNumbers.enumerated() {
             if let number = Int(stringNumber) {
+                
+        
+                
                 if operators[i] == "+" {
-                    total += number
+                    
+                    if i < stringNumbers.count-1 {
+                        if operators[i+1] != "=" {
+                        if operators[i+1] != "x" {
+                            total += number
+                            
+                            }
+                        else if operators[i+1] == "=" {
+                            total += number
+                            
+                            
+                        } else
+                            {mul1 = number}
+                        }
+                        }
+                    else if i == stringNumbers.count-1 {
+                        total += number
+                        
+                        
+                    }
+                    
+                    
+                    
                 } else if operators[i] == "-" {
-                    total -= number
-                }
-                else if operators[i] == "x" {
-                    total = total * number
+                   
+                    if i < stringNumbers.count-1 {
+                        if operators[i+1] != "=" {
+                            if operators[i+1] != "x" {
+                                total -= number
+                                
+                                
+                            }
+                            else if operators[i+1] == "=" {
+                                total -= number
+                                
+                                
+                            } else
+                            {mul1 = number}
+                        }
+                    }
+                    else if i == stringNumbers.count-1 {
+                        total -= number
+                        
+                        
+                    }
+                    
+                    
+                    
+                    
                 }
                 
+                else if operators[i] == "x" {
+                    
+                           if operators[i-1] == "-" {
+          
+                      total = total - (mul1 * number)
+          
+              }
+             
+                           else if operators[i-1] == "+" {
+            
+                  total = total + (mul1 * number)
+                
+              }
+                
+                
             }
+       }
         }
-        
         return total
         
     
