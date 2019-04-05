@@ -40,11 +40,8 @@ class Calculate {
                             total += number
                             
                             }
-                        else if operators[i+1] == "=" {
-                            total += number
-                            
-                            
-                        } else
+                        
+                        else
                             {mul1 = number}
                         }
                         }
@@ -65,11 +62,8 @@ class Calculate {
                                 
                                 
                             }
-                            else if operators[i+1] == "=" {
-                                total -= number
-                                
-                                
-                            } else
+                           
+                        else
                             {mul1 = number}
                         }
                     }
